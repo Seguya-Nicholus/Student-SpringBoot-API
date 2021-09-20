@@ -37,6 +37,7 @@ public class StudentController {
     @ApiOperation(value = "Creates a new Student")
     @PostMapping
     public void registerNewStudent(@RequestBody Student student) {
+
         studentService.addNewStudent(student);
     }
 

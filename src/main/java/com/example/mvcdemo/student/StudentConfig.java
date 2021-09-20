@@ -24,10 +24,16 @@ public class StudentConfig {
             Student sylvia = new Student(
                     "Nakandi Sylvia",
                     "nakawilliams@gmail.com",
-                    LocalDate.of(1989, Month.JUNE,13)
+                    LocalDate.of(1994, Month.JUNE,13)
             );
 
-            repository.saveAll(List.of(nicholas, sylvia));
+            Student nicolette = new Student(
+                    "Nalubega Nicolette Shalom",
+                    "nalubegashalom@gmail.com",
+                    LocalDate.of(2017, Month.MAY,13)
+            );
+
+            repository.saveAll(List.of(nicholas, sylvia, nicolette));
         };
 
     }
