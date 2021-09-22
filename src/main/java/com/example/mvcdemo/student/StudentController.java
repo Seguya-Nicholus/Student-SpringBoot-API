@@ -1,8 +1,17 @@
 package com.example.mvcdemo.student;
 
+import com.example.mvcdemo.security.models.AuthenticationRequest;
+import com.example.mvcdemo.security.models.AuthenticationResponse;
+import com.example.mvcdemo.security.services.MyUserDetailsService;
+import com.example.mvcdemo.security.util.JwtUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
@@ -56,4 +65,5 @@ public class StudentController {
     public void deleteStudent(@PathVariable("studentId") Long studentId){
         studentService.deleteStudent(studentId);
     }
+
 }
